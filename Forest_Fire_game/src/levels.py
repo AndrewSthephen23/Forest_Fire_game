@@ -1,3 +1,5 @@
+import pygame
+
 class Level:
     def __init__(self, player, fires, power_ups, animals, refills):
         self.player = player
@@ -6,10 +8,8 @@ class Level:
         self.animals = animals
         self.refills = refills
 
-    def update(self, keys):
-        # Lógica para interactuar con el fuego, rescatar animales, recargar agua, etc.
-        pass
-
-    def render(self, screen):
-        # Dibujar todo en la pantalla
-        pass
+    def render_end_screen(self, screen):
+        font = pygame.font.Font(None, 48)
+        message = "¡Gracias por proteger el bosque!"
+        text = font.render(message, True, (0, 128, 0))
+        screen.blit(text, (200, 300))
